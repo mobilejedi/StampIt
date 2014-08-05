@@ -7,7 +7,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema STAMPIT
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `STAMPIT` ;
-CREATE SCHEMA IF NOT EXISTS `STAMPIT` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+CREATE SCHEMA IF NOT EXISTS `STAMPIT` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `STAMPIT` ;
 
 -- -----------------------------------------------------
