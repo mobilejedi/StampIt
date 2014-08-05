@@ -1,0 +1,111 @@
+Cordova permettere di accedere al db Sqlite nativo del dispositivo mobile tramite questo plugin
+'com.phonegap.plugins.sqlite'
+questo plugin funziona solo con i device cordova e permette di superare le limitazioni di 5MB 
+offerte dal database di HTML5, cioè "Web Sql Database"
+
+INSTALLAZIONE
+per installarlo basta digitare dalla root del progetto cordova
+
+'cordova plugin add com.phonegap.plugins.sqlite'
+
+UTILIZZO
+
+init)
+Le funzioni per collegarsi al db ed eseguire query saranno rese disponibili in javascript una volta
+che avverrà il trigger  dell'evento 'deviceready' fornito da cordova, quindi si puo' 
+aprire la connessione al database da quell'istante in poi
+
+document.addEventListener("deviceready", inizializzaDB, false);
+
+connect)
+per aprire una connessione al DB bisogna usare questo comando 
+
+db = window.sqlitePlugin.openDatabase({name: "NOME_DB.db"});
+				
+transaction)
+le query da eseguire nel db seguono questa sintassi
+
+db.transaction(queryFunction, errorCallback, successCallback);
+
+la query function dovrà contenere il metodo tx.executeSql('...query...') che, a seconda dell'esito della query richiamerà o la callback 
+di successo o quella di errore
+
+QUI DI SEGUITO UN ESEMPIO CHE COPRE TUTTO LE FUNZIONI MOSTRATE
+
+<script>
+	// esempio di chiamata a funzione una volta inizializzato il device
+	document.addEventListener("deviceready", inizializzaDB, false);
+
+	// esempio di funzione per inizializzare il db
+	function inizializzaDB() {
+		//assegno all'oggetto del DOM window il db per renderlo disponibile al resto delle funzioni
+		window.db = window.sqlitePlugin.openDatabase({name: "NOME_DB.db"});
+		
+		//esempio di transazione
+		db.transaction(populateDB, errorCallback, successCallback);
+		
+		// Create data here
+		function populateDBFunction(tx) {
+			tx.executeSql('DROP TABLE IF EXISTS TABLE_NAME');
+			tx.executeSql('CREATE TABLE IF NOT EXISTS TABLE_NAME (id unique, number int, testo text)');
+		}
+		// Transaction error callback
+		function errorCallback(err) {
+			console.log("Error processing SQL: " + err.code);
+		}
+		// Transaction success callback
+		function successCallback() {
+			console.log("success CB");
+		}
+	}
+	
+	//esempio di funzione JS che esegue una insert nel DB
+	function insertRow(number){
+		console.log("inserisco nuovo dato nel db con valore: "+number);
+		var sqlTxt = "INSERT INTO TABLE_NAME (number, testo) VALUES ( ?, 'aaaa' )";
+		window.db.transaction(function(tx) {	
+				//chiamata vera e propria alla query sql, da notare il parametro da sostituire al post di ? 
+				tx.executeSql(sqlTxt,[number]);
+		}, error, success);
+	}
+	function success(){
+		console.log("transazione completata");
+	}
+	function error(){
+		console.log("error");
+	}
+</script>
+
+DEBUG - ANDROID 
+Per controllare se effettivamente le transazioni sono andate a buon fine sul db salvato sul dispositivo purtroppo
+non c'e' un modo 'comodo' di accedere a quel database, una procedura possibile e' la seguente
+
+1)per accedere al package bisogna rendere la app 'debuggable' aggiungendo il seguente attributo al tag 'application'
+
+android:debuggable="true"
+
+in modo da poter eseguire il backup senza dover eseguire il root del device
+
+2)eseguire il backup di tutto il package della app in questione con questo comando
+
+adb backup -noapk <package_applicazione>
+(nb premere sul device il tasto "esegui backup" senza inserire alcun codice di sicurezza)
+
+3)un volta terminato il backup comparirà nella cartella un file chiamato "backup.ab"
+e' un archivio, lo trasformiamo in un tar e lo estraiamo
+
+dd if=backup.ab bs=24 skip=1|openssl zlib -d > backup.tar
+tar -xvf backup.tar 
+
+4)per esaminare il contenuto del database bisogna usare un tools che legga i file .db
+ad esempio utilizzando 'sqlitebrowser' 
+
+sqlitebrowser apps/<package_applicazione>/db/NOME_DB.db
+
+NB 
+puo' succedere che il flush delle transazioni non avvenga in tempo reale, quindi potrebbe accadere che una volta
+eseguito il comando 'adb backup' non si riesca a visualizzare il database in modo corretto (o proprio non trovarlo)
+Per essere sicuri che effettivamente la transazione sia stata scritta nel DB si puo' fare in questo modo
+1)inserire una console.log() nelle callback di successo o di errore
+2)controllare il LogCat in eclipse, se le transazioni sono troppe si noterà il GarbageCollector lavorare un sacco 
+e alla fine la print del messaggio inserito nella console.log del punto 1, solo a quel punto eseguire il backup
