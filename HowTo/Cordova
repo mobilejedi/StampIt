@@ -1,0 +1,47 @@
+Cordova permette di creare app ibride per dispositivi mobile.
+La parte WEB viene realizzata tramite le normali tecnologie esistenti quali HTML5, CSS e JS mentre per
+accedere alle funzionalita native dei dispositivi quali camera, rubrica contatti, vibrazione etc etc
+si utilizzano i PLUGIN di cordova
+
+COMANDI PRINCIPALI
+
+1)creare nuova app
+
+'cordova create <nome_cartella> <nome_package> <nome_app>'
+
+crea tutta la struttura base della applicazione, in particolare il contenuto delle cartelle è il seguente:
+	platform -> verranno inserite le varie piattaforme quali android, ios, windows phone etc etc
+	www -> bisogna copiare la parte WEB della app cosi com'e' senza modifiche 
+	plugin -> verranno inseriti i vari plugin necessari
+
+2)aggiungere una piattaforma
+
+'cordova platform add <platform>'
+
+crea la struttura base per una determinata piattaforma
+al posto di <platform> bisogna inserire 'android', 'ios' etc etc
+NB per android e' possibile importare la cartella ./platform/android direttamente in eclipse se
+fossero necessario delle modifiche ulteriori al codice 
+
+3)aggiungere un plugin
+
+'cordova plugin add <package_plugin>'
+
+esempio per sqlite <package_plugin> = 'com.phonegap.plugins.sqlite'
+la lista dei plugin disponibili e' presente sul sito ufficiale di cordova
+
+4) build 
+
+'cordova build'
+
+assembla plugin e codice nella cartella www per ogni platform aggiunta
+per android crea il file .apk necessario all'installazione
+
+5)run
+
+'cordova run' 
+
+prende i file generati e li esegue sul dispositivo
+NB il dispositivo deve essere collegato
+NB2 in android, deve essere diponibile il path dei tools e dei platform tools (basta fare una export dell'sdk)
+NB3 se si vuole usare un emulatore il comando diventa 'cordova emulate'
