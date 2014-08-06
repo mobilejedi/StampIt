@@ -5,8 +5,7 @@ SCOPO DI QUESTA GUIDA
 
 *****************INTRODUZIONE************************
 
-CORS (Cross Origin Resource Sharing)
-CORS e' un meccanismo che permette alle risorse web presenti un dominio di essere richieste
+CORS (Cross Origin Resource Sharing) e' un meccanismo che permette alle risorse web presenti un dominio di essere richieste
 da un dominio esterno a quello di provenienza.
 
 ESEMPIO
