@@ -1,6 +1,6 @@
 SCOPO DI QUESTA GUIDA
 -introdurre brevemente il problema la cui soluzione necessita l'attivazione di CORS
--permettere ad un web client che esegue ANGULARJS di chiamare un servizio mockato da SOAPUI
+-permettere ad un web client che utilizza ANGULARJS di chiamare un servizio mockato da SOAPUI
 
 
 *****************INTRODUZIONE************************
