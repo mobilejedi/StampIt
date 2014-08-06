@@ -1,0 +1,64 @@
+SCOPO DI QUESTA GUIDA
+-introdurre brevemente il problema la cui soluzione necessita l'attivazione di CORS
+-permettere ad un web client che esegue ANGULARJS di chiamare un servizio mockato da SOAPUI
+
+
+*****************INTRODUZIONE************************
+
+CORS (Cross Origin Resource Sharing)
+CORS e' un meccanismo che permette alle risorse web presenti un dominio di essere richieste
+da un dominio esterno a quello di provenienza.
+
+ESEMPIO
+WEB SERVER -> http://localhost:8000 (web server che rappresenta il client)
+REST SERVER -> http://localhost:9000 (per simulare le chiamate a server remoto)
+(basta anche solo la porta diversa, concettualmente sono due domini diversi)
+
+se WEB esegue delle chiamate di tipo CRUD (PUT,GET,POST,DELETE) verso REST, il browser segnala un errore di tipo :
+"Bloccata richiesta multiorigine (cross-origin): 
+il criterio di corrispondenza dell’origine non consente la lettura della risorsa remota da <URL_REMOTA>.
+È possibile risolvere il problema spostando la risorsa sullo stesso dominio o attivando CORS."
+
+Non sempre però, e' possibile spostare le risorse sugli stessi domini, quindi sarà necessario attivare CORS
+
+
+****************ANALISI CORS**************************
+
+Prima di mettere mano al codice è necessario capire i meccanismi con cui vengono effettuate le chiamate CRUD al server REST
+C -> CREATE -> Mappata da richieste di tipo PUT
+R -> READ -> Mappata da richieste di tipo GET
+U -> UPDATE -> Mappata da richieste di tipo POST
+D -> DELETE -> Mappata da richieste di tipo DELETE
+
+ci sono da notare due particolari
+1)Tranne nel caso GET, prima di eseguire la chiamata vera e propria del servizio (PUT, POST o DELETE) viene eseguita una preliminare
+chiamata a OPTION (NB viene eseguita automaticamente, non bisogna chiamarla a mano) la quale 
+fondamentalmente dirà quali servizi sono permessi sul dominio del server
+2)per permettere a CORS di funzionare e' necessario aggiungere degli header supplementari alle risposte dei servizi 
+
+PUT -> viene preceduta da chiamata a OPTION
+header da aggiungere in risposta ->  "Access-Control-Allow-Origin : *"
+
+GET -> NON viene preceduta da chiamata a OPTION
+header da aggiungere in risposta ->  "Access-Control-Allow-Origin : *"
+
+POST -> viene preceduta da chiamata a OPTION
+header da aggiungere in risposta ->  "Access-Control-Allow-Origin : *"
+
+DELETE -> viene preceduta da chiamata a OPTION
+header da aggiungere in risposta ->  "Access-Control-Allow-Origin : *"
+
+OPTION 
+header da aggiungere in risposta ->  "Access-Control-Allow-Headers : Content-Type"
+header da aggiungere in risposta ->  "Access-Control-Allow-Origin : *"
+header da aggiungere in risposta ->  "Access-Control-Allow-Methods : <LISTA_METODI>"
+dove con <LISTA_METODI> potrebbe essere questa "GET,POST,PUT,DELETE" se si vogliono permettere tutte le operazioni CRUD sopra citate
+
+****************Web Client - AngularJS******************
+
+Dalla versione 1.2 in poi di AngularJS non sono necessarie modifiche al client
+
+****************Web Server - SoapUi*********************
+
+1)Costruire le response mockate aggiungendo gli header mostrati nella sezione ANALISI CORS
+2)Aggiungere la response OPTION con gli header mostrati nella sezione ANALISI CORS
