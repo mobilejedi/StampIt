@@ -10,7 +10,7 @@ da un dominio esterno a quello di provenienza.
 
 ESEMPIO
 WEB SERVER -> http://localhost:8000 (web server che rappresenta il client)
-REST SERVER -> http://localhost:9000 (per simulare le chiamate a server remoto)
+REST SERVER -> http://localhost:9000 (server "remoto" che contiene le risorse REST)
 (basta anche solo la porta diversa, concettualmente sono due domini diversi)
 
 se WEB esegue delle chiamate di tipo CRUD (PUT,GET,POST,DELETE) verso REST, il browser segnala un errore di tipo :
@@ -18,7 +18,7 @@ se WEB esegue delle chiamate di tipo CRUD (PUT,GET,POST,DELETE) verso REST, il b
 il criterio di corrispondenza dell’origine non consente la lettura della risorsa remota da <URL_REMOTA>.
 È possibile risolvere il problema spostando la risorsa sullo stesso dominio o attivando CORS."
 
-Non sempre però, e' possibile spostare le risorse sugli stessi domini, quindi sarà necessario attivare CORS
+Non sempre però e' possibile spostare le risorse sugli stessi domini, quindi sarà necessario attivare CORS
 
 
 ****************ANALISI CORS**************************
