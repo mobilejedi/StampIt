@@ -13,7 +13,7 @@ WEB SERVER -> http://localhost:8000 (web server che rappresenta il client)
 REST SERVER -> http://localhost:9000 (server "remoto" che contiene le risorse REST)
 (basta anche solo la porta diversa, concettualmente sono due domini diversi)
 
-se WEB esegue delle chiamate di tipo CRUD (PUT,GET,POST,DELETE) verso REST, il browser segnala un errore di tipo :
+se WEB esegue delle chiamate di tipo CRUD (POST,GET,PUT,DELETE) verso REST, il browser segnala un errore di tipo :
 "Bloccata richiesta multiorigine (cross-origin): 
 il criterio di corrispondenza dell’origine non consente la lettura della risorsa remota da <URL_REMOTA>.
 È possibile risolvere il problema spostando la risorsa sullo stesso dominio o attivando CORS."
@@ -24,9 +24,9 @@ Non sempre però e' possibile spostare le risorse sugli stessi domini, quindi sa
 ****************ANALISI CORS**************************
 
 Prima di mettere mano al codice è necessario capire i meccanismi con cui vengono effettuate le chiamate CRUD al server REST
-C -> CREATE -> Mappata da richieste di tipo PUT
+C -> CREATE -> Mappata da richieste di tipo POST
 R -> READ -> Mappata da richieste di tipo GET
-U -> UPDATE -> Mappata da richieste di tipo POST
+U -> UPDATE -> Mappata da richieste di tipo PUT
 D -> DELETE -> Mappata da richieste di tipo DELETE
 
 ci sono da notare due particolari
