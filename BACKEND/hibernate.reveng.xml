@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table-filter match-schema="stampit" match-name=".*" />
+	<table-filter match-name="achieved_bonuses"
+		match-catalog="stampit">
+	</table-filter>
+	<table-filter match-name="active_cards" match-catalog="stampit"></table-filter>
+	<table-filter match-name="bonus" match-catalog="stampit"></table-filter>
+	<table-filter match-name="cards" match-catalog="stampit"></table-filter>
+	<table-filter match-name="categories_params"
+		match-catalog="stampit">
+	</table-filter>
+	<table-filter match-name="codes" match-catalog="stampit"></table-filter>
+	<table-filter match-name="customer_feedbacks"
+		match-catalog="stampit">
+	</table-filter>
+	<table-filter match-name="customers" match-catalog="stampit"></table-filter>
+	<table-filter match-name="logs" match-catalog="stampit"></table-filter>
+	<table-filter match-name="merchant_categories"
+		match-catalog="stampit">
+	</table-filter>
+	<table-filter match-name="merchant_feedbacks"
+		match-catalog="stampit">
+	</table-filter>
+	<table-filter match-name="merchants" match-catalog="stampit"></table-filter>
+	<table-filter match-name="prizes" match-catalog="stampit"></table-filter>
+	<table-filter match-name="stamp_parameters"
+		match-catalog="stampit">
+	</table-filter>
+</hibernate-reverse-engineering>
