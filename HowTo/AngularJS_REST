@@ -12,6 +12,7 @@ le chiamate CRUD necessarie a gestire la risorsa /risorsaProva/<id_risorsa>
 
 STEP
 1)creazione factory dal nome 'backendFactory'
+NB $resource restituisce gia una factory, quindi stiamo in pratica aggiungendo delle action personalizzate 
 
 *************
 angular.module('myApp.services', ['ngResource'])
@@ -31,8 +32,7 @@ angular.module('myApp.services', ['ngResource'])
 ************
 
 la 'backendFactory' qui dichiarata non definisce nessuna funzione (vedere una factory di base sulla doc ufficiale di
-angular) e al suo interno e restituisce un oggetto 
-piu o meno di questo tipo
+angular) e al suo interno e restituisce un oggetto piu o meno di questo tipo
 
  { 
     //action di default istanziate in automatico
