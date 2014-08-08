@@ -3,31 +3,31 @@
 
 <hibernate-reverse-engineering>
 
-	<table-filter match-schema="stampit" match-name=".*" />
-	<table-filter match-name="achieved_bonuses"
-		match-catalog="stampit">
+	<table-filter match-schema="STAMPIT" match-name=".*" />
+	<table-filter match-name="ACHIEVED_BONUSES"
+		match-catalog="STAMPIT">
 	</table-filter>
-	<table-filter match-name="active_cards" match-catalog="stampit"></table-filter>
-	<table-filter match-name="bonus" match-catalog="stampit"></table-filter>
-	<table-filter match-name="cards" match-catalog="stampit"></table-filter>
-	<table-filter match-name="categories_params"
-		match-catalog="stampit">
+	<table-filter match-name="ACTIVE_CARDS" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="BONUS" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="CARDS" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="CATEGORIES_PARAMS"
+		match-catalog="STAMPIT">
 	</table-filter>
-	<table-filter match-name="codes" match-catalog="stampit"></table-filter>
-	<table-filter match-name="customer_feedbacks"
-		match-catalog="stampit">
+	<table-filter match-name="CODES" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="CUSTOMER_FEEDBACKS"
+		match-catalog="STAMPIT">
 	</table-filter>
-	<table-filter match-name="customers" match-catalog="stampit"></table-filter>
-	<table-filter match-name="logs" match-catalog="stampit"></table-filter>
-	<table-filter match-name="merchant_categories"
-		match-catalog="stampit">
+	<table-filter match-name="CUSTOMERS" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="LOGS" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="MERCHANT_CATEGORIES"
+		match-catalog="STAMPIT">
 	</table-filter>
-	<table-filter match-name="merchant_feedbacks"
-		match-catalog="stampit">
+	<table-filter match-name="MERCHANT_FEEDBACKS"
+		match-catalog="STAMPIT">
 	</table-filter>
-	<table-filter match-name="merchants" match-catalog="stampit"></table-filter>
-	<table-filter match-name="prizes" match-catalog="stampit"></table-filter>
-	<table-filter match-name="stamp_parameters"
-		match-catalog="stampit">
+	<table-filter match-name="MERCHANTS" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="PRIZES" match-catalog="STAMPIT"></table-filter>
+	<table-filter match-name="STAMP_PARAMETERS"
+		match-catalog="STAMPIT">
 	</table-filter>
 </hibernate-reverse-engineering>
