@@ -27,17 +27,6 @@ public class AchievedBonus implements java.io.Serializable {
 	public AchievedBonus() {
 	}
 
-//	public AchievedBonus(long idAchievedBonuses) {
-//		this.idAchievedBonuses = idAchievedBonuses;
-//	}
-//
-//	public AchievedBonus(long idAchievedBonuses, ActiveCard activeCards,
-//			Bonus bonus) {
-//		this.idAchievedBonuses = idAchievedBonuses;
-//		this.activeCards = activeCards;
-//		this.bonus = bonus;
-//	}
-
 	@Id
 	@Column(name = "ID_ACHIEVED_BONUSES", unique = true, nullable = false)
 	public long getIdAchievedBonuses() {

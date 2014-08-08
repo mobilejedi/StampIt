@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 public class MerchantFeedback implements java.io.Serializable {
 
 	private long idFeedbaack;
-	@JsonBackReference
 	private Merchant merchants;
 	private String message;
 	private Date insDate;

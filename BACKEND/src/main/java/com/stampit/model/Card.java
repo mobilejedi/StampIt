@@ -46,22 +46,6 @@ public class Card implements java.io.Serializable {
 	public Card() {
 	}
 
-	public Card(Merchant merchants, int slotsNum, Date expireDate) {
-		this.merchants = merchants;
-		this.slotsNum = slotsNum;
-		this.expireDate = expireDate;
-	}
-
-	public Card(Merchant merchants, int slotsNum, Date expireDate,
-			Set codeses, Set activeCardses, Set bonuses) {
-		this.merchants = merchants;
-		this.slotsNum = slotsNum;
-		this.expireDate = expireDate;
-		this.codeses = codeses;
-		this.activeCardses = activeCardses;
-		this.bonuses = bonuses;
-	}
-
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_CARD", unique = true, nullable = false)

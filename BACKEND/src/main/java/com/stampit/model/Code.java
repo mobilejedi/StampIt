@@ -20,10 +20,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table(name = "codes", catalog = "stampit")
 public class Code implements java.io.Serializable {
 
-	private long idCode;
-	@JsonBackReference
-	private Card cards;
-	@JsonManagedReference
+	private long idCode;	
+	private Card cards;	
 	private StampParameter stampParameters;
 	private String code;
 

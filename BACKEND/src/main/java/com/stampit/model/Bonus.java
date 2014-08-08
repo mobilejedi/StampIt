@@ -36,21 +36,6 @@ public class Bonus implements java.io.Serializable {
 	public Bonus() {
 	}
 
-	public Bonus(long idBonus, Card cards, int slotPos) {
-		this.idBonus = idBonus;
-		this.cards = cards;
-		this.slotPos = slotPos;
-	}
-
-	public Bonus(long idBonus, Card cards, Prize prizes, int slotPos,
-			Set achievedBonuseses) {
-		this.idBonus = idBonus;
-		this.cards = cards;
-		this.prizes = prizes;
-		this.slotPos = slotPos;
-		this.achievedBonuseses = achievedBonuseses;
-	}
-
 	@Id
 	@Column(name = "ID_BONUS", unique = true, nullable = false)
 	public long getIdBonus() {

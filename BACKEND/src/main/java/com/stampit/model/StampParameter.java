@@ -33,9 +33,7 @@ public class StampParameter implements java.io.Serializable {
 	private String measureUnit;
 	private float value;
 	private int stampsNum;
-	@JsonBackReference
-	private Set<Code> codeses = new HashSet<Code>(0);
-	@JsonManagedReference
+	private Set<Code> codeses = new HashSet<Code>();
 	private Set<MerchantCategory> merchantCategorieses = new HashSet<MerchantCategory>(0);
 
 	public StampParameter() {

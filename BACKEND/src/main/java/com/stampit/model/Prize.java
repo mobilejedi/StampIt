@@ -23,7 +23,6 @@ public class Prize implements java.io.Serializable {
 
 	private long idPrize;
 	private String description;
-	@JsonBackReference 
 	private Set<Bonus> bonuses = new HashSet<Bonus>(0);
 
 	public Prize() {

@@ -41,29 +41,7 @@ public class Customer implements java.io.Serializable {
 
 	public Customer() {
 	}
-/*
-	public Customer(String username, String password, String firstName,
-			String lastName, String email) {
-		this.username = username;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
 
-	public Customer(String username, String password, String firstName,
-			String lastName, String email, String phone,
-			Set<CustomerFeedback> customerFeedbacks, Set<ActiveCard> activeCards) {
-		this.username = username;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.phone = phone;
-		this.customerFeedbacks = customerFeedbacks;
-		this.activeCards = activeCards;
-	}
-*/
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_CUSTOMER", unique = true, nullable = false)

@@ -47,52 +47,10 @@ public class Merchant implements java.io.Serializable {
 	private Date closingTime;
 	private byte[] gpsCoordinates;
 	private String email;
-	@JsonManagedReference
 	private Set<MerchantFeedback> merchantFeedbackses = new HashSet<MerchantFeedback>(0);
-	@JsonBackReference
 	private Set<Card> cardses = new HashSet<Card>(0);
 
 	public Merchant() {
-	}
-
-	public Merchant(MerchantCategory merchantCategories, String username,
-			String password, String name, String vat, String phone,
-			String address, String city, String country, String email) {
-		this.merchantCategories = merchantCategories;
-		this.username = username;
-		this.password = password;
-		this.name = name;
-		this.vat = vat;
-		this.phone = phone;
-		this.address = address;
-		this.city = city;
-		this.country = country;
-		this.email = email;
-	}
-
-	public Merchant(MerchantCategory merchantCategories, String username,
-			String password, String name, String vat, String phone,
-			String address, String city, String country, String website,
-			String closingDay, Date openingTime, Date closingTime,
-			byte[] gpsCoordinates, String email, Set merchantFeedbackses,
-			Set cardses) {
-		this.merchantCategories = merchantCategories;
-		this.username = username;
-		this.password = password;
-		this.name = name;
-		this.vat = vat;
-		this.phone = phone;
-		this.address = address;
-		this.city = city;
-		this.country = country;
-		this.website = website;
-		this.closingDay = closingDay;
-		this.openingTime = openingTime;
-		this.closingTime = closingTime;
-		this.gpsCoordinates = gpsCoordinates;
-		this.email = email;
-		this.merchantFeedbackses = merchantFeedbackses;
-		this.cardses = cardses;
 	}
 
 	@Id

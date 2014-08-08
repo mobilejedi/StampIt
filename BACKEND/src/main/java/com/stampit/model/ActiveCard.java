@@ -37,27 +37,11 @@ public class ActiveCard implements java.io.Serializable {
 	private int stampsNumber;
 	private Integer rating;	
 	private Set<Log> logses = new HashSet<Log>();	
-	private Set<AchievedBonus> achievedBonuseses = new HashSet<AchievedBonus>(0);
+	private Set<AchievedBonus> achievedBonuseses = new HashSet<AchievedBonus>();
 
 	public ActiveCard() {
 	}
-/*
-	public ActiveCard(Card cards, Customer customers, int stampsNumber) {
-		this.cards = cards;
-		this.customers = customers;
-		this.stampsNumber = stampsNumber;
-	}
 
-	public ActiveCard(Card cards, Customer customers, int stampsNumber,
-			Integer rating, Set logses, Set achievedBonuseses) {
-		this.cards = cards;
-		this.customers = customers;
-		this.stampsNumber = stampsNumber;
-		this.rating = rating;
-		this.logses = logses;
-		this.achievedBonuseses = achievedBonuseses;
-	}
-*/
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_ACTIVE_CARD", unique = true, nullable = false)

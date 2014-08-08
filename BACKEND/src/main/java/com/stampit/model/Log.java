@@ -32,20 +32,6 @@ public class Log implements java.io.Serializable {
 	public Log() {
 	}
 
-//	public Log(long idLog, Date insDate) {
-//		this.idLog = idLog;
-//		this.insDate = insDate;
-//	}
-//
-//	public Log(long idLog, ActiveCard activeCards, Date insDate,
-//			String location, Integer stampsNum) {
-//		this.idLog = idLog;
-//		this.activeCards = activeCards;
-//		this.insDate = insDate;
-//		this.location = location;
-//		this.stampsNum = stampsNum;
-//	}
-
 	@Id
 	@Column(name = "ID_LOG", unique = true, nullable = false)
 	public long getIdLog() {

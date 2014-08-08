@@ -28,9 +28,7 @@ public class MerchantCategory implements java.io.Serializable {
 	private long idCategory;
 	private String name;
 	private String description;
-	@JsonBackReference
 	private Set<StampParameter> stampParameterses = new HashSet<StampParameter>(0);
-	@JsonManagedReference
 	private Set<Merchant> merchantses = new HashSet<Merchant>(0);
 
 	public MerchantCategory() {

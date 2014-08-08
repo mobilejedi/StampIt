@@ -34,14 +34,6 @@ public class CustomerFeedback implements java.io.Serializable {
 	public CustomerFeedback() {
 	}
 
-//	public CustomerFeedback(long idFeedback, Customer customer,
-//			String message, Date insDate) {
-//		this.idFeedback = idFeedback;
-//		this.customer = customer;
-//		this.message = message;
-//		this.insDate = insDate;
-//	}
-
 	@Id
 	@Column(name = "ID_FEEDBACK", unique = true, nullable = false)
 	public long getIdFeedback() {
@@ -50,9 +42,8 @@ public class CustomerFeedback implements java.io.Serializable {
 
 	public void setIdFeedback(long idFeedback) {
 		this.idFeedback = idFeedback;
-	}
+	}	
 	
-	//@RestResource(rel="feedbacksCustomer", exported=false)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CUSTOMER", nullable = false)		
 	public Customer getCustomer() {
