@@ -9,7 +9,6 @@ com\stampit\model\Prize.class
 com\stampit\model\ActiveCard.class
 com\stampit\model\AchievedBonus.class
 com\stampit\services\CustomerFeedBackRepository.class
-com\stampit\model\Bonus.class
 com\stampit\services\ActiveCardRepository.class
 com\stampit\services\CustomerRepository.class
 com\stampit\model\Log.class
