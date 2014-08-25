@@ -1,3 +1,5 @@
+#backend
+
 Il backend è stato realizzato effettuando il reverse engineering del db STAMPIT tramite Hibernate tools per ottenere il modello ad oggetti e poi esponendo le entity come risorse REST utilizzando il framework Spring Data REST.
 Dalle entity generate sono stati eliminati i costruttori con parametri perchè non necessari ed è stata eliminata la specifica della dimensione delle collection in fase di inizializzazione.
 Per esporre una entity come risorsa REST bisogna creare una interfaccia che estende CrudRepository o un' altra interfaccia che estende CrudRepository (come PagingAndSortingRepository) ed annotarla con @RepositoryRestResource.
