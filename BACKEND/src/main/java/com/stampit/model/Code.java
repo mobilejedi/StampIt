@@ -21,17 +21,17 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class Code implements java.io.Serializable {
 
 	private long idCode;	
-	private Card cards;	
+	private Card card;	
 	private StampParameter stampParameters;
 	private String code;
 
 	public Code() {
 	}
 
-	public Code(long idCode, Card cards, StampParameter stampParameters,
+	public Code(long idCode, Card card, StampParameter stampParameters,
 			String code) {
 		this.idCode = idCode;
-		this.cards = cards;
+		this.card = card;
 		this.stampParameters = stampParameters;
 		this.code = code;
 	}
@@ -48,12 +48,12 @@ public class Code implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARD", nullable = false)
-	public Card getCards() {
-		return this.cards;
+	public Card getCard() {
+		return this.card;
 	}
 
-	public void setCards(Card cards) {
-		this.cards = cards;
+	public void setCard(Card card) {
+		this.card = card;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

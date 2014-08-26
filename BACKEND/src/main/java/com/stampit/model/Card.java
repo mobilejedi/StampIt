@@ -86,7 +86,7 @@ public class Card implements java.io.Serializable {
 		this.expireDate = expireDate;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cards")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "card")
 	public Set<Code> getCodeses() {
 		return this.codeses;
 	}
@@ -95,7 +95,7 @@ public class Card implements java.io.Serializable {
 		this.codeses = codeses;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cards")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "card")
 	public Set<ActiveCard> getActiveCardses() {
 		return this.activeCardses;
 	}
@@ -104,7 +104,7 @@ public class Card implements java.io.Serializable {
 		this.activeCardses = activeCardses;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cards")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "card")
 	public Set<Bonus> getBonuses() {
 		return this.bonuses;
 	}

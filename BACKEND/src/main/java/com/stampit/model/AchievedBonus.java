@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class AchievedBonus implements java.io.Serializable {
 
 	private long idAchievedBonuses;
-	private ActiveCard activeCards;
+	private ActiveCard activeCard;
 	private Bonus bonus;
 
 	public AchievedBonus() {
@@ -39,12 +39,12 @@ public class AchievedBonus implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_ACTIVE_CARD")
-	public ActiveCard getActiveCards() {
-		return this.activeCards;
+	public ActiveCard getActiveCard() {
+		return this.activeCard;
 	}
 
-	public void setActiveCards(ActiveCard activeCards) {
-		this.activeCards = activeCards;
+	public void setActiveCard(ActiveCard activeCard) {
+		this.activeCard = activeCard;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

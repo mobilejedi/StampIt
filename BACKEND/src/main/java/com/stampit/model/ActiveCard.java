@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 public class ActiveCard implements java.io.Serializable {
 
 	private Long idActiveCard;
-	private Card cards;
+	private Card card;
 	private Customer customer;
 	private int stampsNumber;
 	private Integer rating;	
@@ -56,12 +56,12 @@ public class ActiveCard implements java.io.Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARD", nullable = false)
 	@RestResource(path = "card")
-	public Card getCards() {
-		return this.cards;
+	public Card getCard() {
+		return this.card;
 	}
 
-	public void setCards(Card cards) {
-		this.cards = cards;
+	public void setCard(Card card) {
+		this.card = card;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -93,7 +93,7 @@ public class ActiveCard implements java.io.Serializable {
 		this.rating = rating;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "activeCards")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "activeCard")
 	@RestResource(path="logs", rel="logs")
 	public Set<Log> getLogses() {
 		return this.logses;
@@ -103,7 +103,7 @@ public class ActiveCard implements java.io.Serializable {
 		this.logses = logses;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "activeCards")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "activeCard")
 	@RestResource(path="achievedBonuses",rel="achievedBonuses")
 	public Set<AchievedBonus> getAchievedBonuseses() {
 		return this.achievedBonuseses;
