@@ -7,7 +7,7 @@
 // In this case it is a simple value service.
 angular.module('myApp.services', ['ngResource'])
 
-.value('RestBaseEndpoint', 'http://192.168.43.142:8080/rest')
+.value('RestBaseEndpoint', 'http://localhost:8080/rest')
 
 .factory('BackendService',	['$resource','RestBaseEndpoint',function($resource, RestBaseEndpoint){
 	return $resource(
