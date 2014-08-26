@@ -1,0 +1,17 @@
+NB
+Per testare l'app di frontend ci sono due possibilità
+1)usare node.js per eseguire run in automatico col comando 
+	'sudo npm start'
+2)copiare la cartella 'app' in un server locale, ad esempio Apache e aprire un browers
+
+NB2 
+per testarla col server SOAP UI assicurarsi che l'endpoint del server sia corretto
+nel file 'app/js/service.js' controllare questa riga
+
+.value('RestBaseEndpoint', 'http://<URL_SERVER>:8080/rest')
+
+dove <URL_SERVER> puo' essere 'localhost' se testato sulla stessa macchina
+
+NB3
+Per ora e' integrato solo il servizio di cordova relativo alla geolocalizzazione
+
