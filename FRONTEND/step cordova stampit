@@ -1,0 +1,53 @@
+STEP per creare nuovo progetto cordova stampit
+
+NB 
+Assicurarsi che l'endpoint del server rest sia corretto nel file "service.js" presente nella cartella "stampit_www/js" alla riga 
+" .value('RestBaseEndpoint', 'http://192.168.43.142:8080/rest') "
+
+***************COPIARE E INCOLLARE NEL TERMINALE**************
+cordova create StampIT com.alten.stampit StampIT
+cd StampIT
+rm -R www 
+cp -R ../stampit_www/ www
+cordova platform add android
+cordova plugin add ../stampit_plugin/org.apache.cordova.geolocation
+cordova plugin add ../stampit_plugin/com.phonegap.plugins.barcodescanner
+cordova build
+cordova run
+*************************************************************
+
+
+SPIEGAZIONE
+1)creare nuovo progetto cordova
+
+cordova create StampIT com.alten.stampit StampIT; cd StampIT
+
+2)copiare cartella la cartella coi sorgenti html,css,js nella cartella www
+
+NB sono nella cartella stampit_www
+
+rm -R www 
+cp -R ../stampit_www/ www
+
+3)aggiungere platform 
+
+cordova platform add android
+
+4)aggiungere plugin
+
+NB sono backuppati nella cartella stampit_plugin
+
+//GPS
+//fetch remoto -> cordova plugin add org.apache.cordova.geolocation
+//backup -> cordova plugin add ../stampit_plugin/org.apache.cordova.geolocation
+//QR SCAN
+/fetch remoto(NB solo landscape)-> cordova plugin add com.phonegap.plugins.barcodescanner
+//backup (NB modificato per portrait) -> cordova plugin add ../stampit_plugin/com.phonegap.plugins.barcodescanner
+
+5)build progetto
+
+cordova build
+
+6)run su device collegato via usb
+
+cordova run
