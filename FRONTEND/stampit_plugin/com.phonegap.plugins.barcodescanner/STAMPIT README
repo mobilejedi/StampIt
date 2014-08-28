@@ -1,6 +1,0 @@
-il jar viene generato dal progetto LibProject all'interno della cartella com.phonegap.plugins.barcodescanner
-
-e' impostato per fa funzionare il barcode scanner in modalita SOLO portrait
-
-e' necessario copiarlo a mano nella cartella platformandroid/lib se non venisse preso quello nella cartella 
-plugin/com.phonegap.plugins.barcodescanner/src/android
