@@ -15,25 +15,32 @@
 	    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
 	    <url>http://repository.springsource.com/maven/bundles/external</url>
 	</repository>
-  </repositories>
+	<repository>
+		<id>OSGEO GeoTools repo</id>
+	    <url>http://download.osgeo.org/webdav/geotools</url>
+	</repository>
+	<repository>
+	     <id>Hibernate Spatial repo</id>
+	     <url>http://www.hibernatespatial.org/repository</url>
+	</repository>
+  </repositories>   
     <properties>
-
+    
 		<!-- Generic properties -->
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- Web -->
 		<jsp.version>2.2</jsp.version>
 		<jstl.version>1.2</jstl.version>
-		<servlet.version>2.5</servlet.version>
-		
+		<servlet.version>2.5</servlet.version>		
 
 		<!-- Spring -->
 		<spring-framework.version>4.0.6.RELEASE</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
-		<hibernate.version>4.2.1.Final</hibernate.version>
+		<hibernate.version>4.3.6.Final</hibernate.version>
 
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
@@ -42,27 +49,16 @@
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
 
-	</properties>
-	
-	
+	</properties>	
 	
 	<dependencies>
-	    
-	
+			
 		<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring-framework.version}</version>
-		</dependency>
-		
-		
-	    
-	    <!--  <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jpa</artifactId>
-			<version>2.0.8</version>
-		</dependency>-->
+		</dependency>	    
  		
  		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -80,18 +76,14 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>4.0.6.RELEASE</version>
-		</dependency>
-		
-		
+		</dependency>		
 		
 		<!-- Spring Data REST -->
 		<dependency>
 	        <groupId>org.springframework.data</groupId>
 	        <artifactId>spring-data-rest-webmvc</artifactId>
 	        <version>2.1.2.RELEASE</version>
-	    </dependency>
-	    
-	    
+	    </dependency>	    
 	    
 	    <!-- <dependency>
 		   <groupId>org.springframework.data</groupId>
@@ -145,13 +137,32 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Hibernate -->
+		<!-- Hibernate -->		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
+		
+		<!-- Hibernate Spatial -->
+		<dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-spatial</artifactId>
+                <version>4.3</version>
+        </dependency>
+		
+		<!-- JTS Topology Suite -->
+		<dependency>
+			<groupId>com.vividsolutions</groupId>
+			<artifactId>jts</artifactId>
+			<version>1.13</version>
+		</dependency>
 		
 		<!-- Test Artifacts -->
 		<dependency>
@@ -166,6 +177,12 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
+		</dependency>		
 
 	</dependencies>	
 	<build>
