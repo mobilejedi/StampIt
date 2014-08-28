@@ -24,8 +24,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Type;
-import org.hibernate.spatial.GeometryType;
-
 import com.vividsolutions.jts.geom.Point;
 
 /**
@@ -57,12 +55,14 @@ public class Merchant implements java.io.Serializable {
 	public Merchant() {
 	}
 
+	
+//	@SequenceGenerator(name="MERCHANTS_ID_MERCHANT_seq",
+//		sequenceName="MERCHANTS_ID_MERCHANT_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="MERCHANTS_ID_MERCHANT_seq")
 	@Id
-	@SequenceGenerator(name="MERCHANTS_ID_MERCHANT_seq",
-		sequenceName="MERCHANTS_ID_MERCHANT_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="MERCHANTS_ID_MERCHANT_seq")//@GeneratedValue(strategy = IDENTITY)
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_MERCHANT", unique = true, nullable = false)
 	public Long getIdMerchant() {
 		return this.idMerchant;
@@ -192,7 +192,7 @@ public class Merchant implements java.io.Serializable {
 		this.closingTime = closingTime;
 	}
 
-	@Column(name = "GPS_COORDINATES")
+	@Column(name = "GPS_COORDINATES", columnDefinition="Geometry")
 	@Type(type="org.hibernate.spatial.GeometryType")
 	public Point getGpsCoordinates() {
 		return this.gpsCoordinates;

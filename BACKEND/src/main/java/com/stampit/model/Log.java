@@ -33,12 +33,13 @@ public class Log implements java.io.Serializable {
 	public Log() {
 	}
 
+	
+//	@SequenceGenerator(name="LOGS_ID_LOG_seq",
+//		sequenceName="LOGS_ID_LOG_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="LOGS_ID_LOG_seq")
 	@Id
-	@SequenceGenerator(name="LOGS_ID_LOG_seq",
-		sequenceName="LOGS_ID_LOG_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="LOGS_ID_LOG_seq")
 	@Column(name = "ID_LOG", unique = true, nullable = false)
 	public long getIdLog() {
 		return this.idLog;

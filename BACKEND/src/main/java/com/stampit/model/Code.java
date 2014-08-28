@@ -36,12 +36,13 @@ public class Code implements java.io.Serializable {
 		this.code = code;
 	}
 
+	
+//	@SequenceGenerator(name="CODES_ID_CODE_seq",
+//		sequenceName="CODES_ID_CODE_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="CODES_ID_CODE_seq")
 	@Id
-	@SequenceGenerator(name="CODES_ID_CODE_seq",
-		sequenceName="CODES_ID_CODE_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="CODES_ID_CODE_seq")
 	@Column(name = "ID_CODE", unique = true, nullable = false)
 	public long getIdCode() {
 		return this.idCode;

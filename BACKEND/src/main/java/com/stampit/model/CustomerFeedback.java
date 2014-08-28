@@ -32,12 +32,13 @@ public class CustomerFeedback implements java.io.Serializable {
 	public CustomerFeedback() {
 	}
 
+	
+//	@SequenceGenerator(name="CUSTOMER_FEEDBACKS_ID_FEEDBACK_seq",
+//		sequenceName="CUSTOMER_FEEDBACKS_ID_FEEDBACK_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="CUSTOMER_FEEDBACKS_ID_FEEDBACK_seq")
 	@Id
-	@SequenceGenerator(name="CUSTOMER_FEEDBACKS_ID_FEEDBACK_seq",
-		sequenceName="CUSTOMER_FEEDBACKS_ID_FEEDBACK_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="CUSTOMER_FEEDBACKS_ID_FEEDBACK_seq")
 	@Column(name = "ID_FEEDBACK", unique = true, nullable = false)
 	public long getIdFeedback() {
 		return this.idFeedback;

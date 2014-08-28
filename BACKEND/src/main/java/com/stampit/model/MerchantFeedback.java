@@ -46,12 +46,13 @@ public class MerchantFeedback implements java.io.Serializable {
 		this.insDate = insDate;
 	}
 
+	
+//	@SequenceGenerator(name="MERCHANT_FEEDBACKS_ID_FEEDBACK_seq",
+//		sequenceName="MERCHANT_FEEDBACKS_ID_FEEDBACK_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="MERCHANT_FEEDBACKS_ID_FEEDBACK_seq")
 	@Id
-	@SequenceGenerator(name="MERCHANT_FEEDBACKS_ID_FEEDBACK_seq",
-		sequenceName="MERCHANT_FEEDBACKS_ID_FEEDBACK_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="MERCHANT_FEEDBACKS_ID_FEEDBACK_seq")
 	@Column(name = "ID_FEEDBACK", unique = true, nullable = false)
 	public long getidFeedback() {
 		return this.idFeedback;

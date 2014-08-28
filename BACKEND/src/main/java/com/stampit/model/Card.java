@@ -41,12 +41,13 @@ public class Card implements java.io.Serializable {
 	public Card() {
 	}
 
+	
+//	@SequenceGenerator(name="CARDS_ID_CARD_seq",
+//		sequenceName="CARDS_ID_CARD_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="CARDS_ID_CARD_seq")//@GeneratedValue(strategy = IDENTITY)
 	@Id
-	@SequenceGenerator(name="CARDS_ID_CARD_seq",
-		sequenceName="CARDS_ID_CARD_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="CARDS_ID_CARD_seq")//@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_CARD", unique = true, nullable = false)
 	public Long getIdCard() {
 		return this.idCard;

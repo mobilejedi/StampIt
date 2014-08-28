@@ -40,12 +40,13 @@ public class Prize implements java.io.Serializable {
 		this.bonuses = bonuses;
 	}
 
+	
+//	@SequenceGenerator(name="PRIZES_ID_PRIZE_seq",
+//		sequenceName="PRIZES_ID_PRIZE_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="PRIZES_ID_PRIZE_seq")
 	@Id
-	@SequenceGenerator(name="PRIZES_ID_PRIZE_seq",
-		sequenceName="PRIZES_ID_PRIZE_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="PRIZES_ID_PRIZE_seq")
 	@Column(name = "ID_PRIZE", unique = true, nullable = false)
 	public long getIdPrize() {
 		return this.idPrize;

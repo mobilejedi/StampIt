@@ -40,12 +40,14 @@ public class Customer implements java.io.Serializable {
 	public Customer() {
 	}
 
+	
+//	@SequenceGenerator(name="CUSTOMERS_ID_CUSTOMER_seq",
+//		sequenceName="CUSTOMERS_ID_CUSTOMER_seq",
+//		allocationSize=1)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+//		generator="CUSTOMERS_ID_CUSTOMER_seq")
 	@Id
-	@SequenceGenerator(name="CUSTOMERS_ID_CUSTOMER_seq",
-		sequenceName="CUSTOMERS_ID_CUSTOMER_seq",
-		allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-		generator="CUSTOMERS_ID_CUSTOMER_seq")//@GeneratedValue(strategy = IDENTITY)
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_CUSTOMER", unique = true, nullable = false)
 	public Long getIdCustomer() {
 		return this.idCustomer;
