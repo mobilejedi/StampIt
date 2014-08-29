@@ -357,15 +357,15 @@ insert into MERCHANT_CATEGORIES values(5, 'enoteca', 'nessuna descrizione');
 insert into MERCHANT_CATEGORIES values(6, 'mensa', 'nessuna descrizione');
 
 -- MERCHANTS --
-insert into MERCHANTS values(1, 'merchant1', 'pass1', 'Bar Roma', '0764352056C', '33921456789876', 'Via Achille Benedetti 2', 'Roma', 'Italy', 'www.barroma.it', '1', '07:00', '23:00', GeomFromText('POINT(41.912458 12.544012)'), 'barroma@test.com', '1');
-insert into MERCHANTS values(2, 'merchant2', 'pass2', 'Bar Milano', '0864352056C', '33921456789856', 'Via Vincenzo Foppa 10', 'Milano', 'Italy', 'www.barmilano.it', '2', '07:00', '23:30', GeomFromText('POINT(45.458437 9.162792)'), 'barmilano@test.com', '1');
-insert into MERCHANTS values(3, 'merchant3', 'pass3', 'Bar Torino', '0864352058C', '3392145678234', 'Corso Trapani 195', 'Torino', 'Italy', 'www.bartorino.it', '2', '06:00', '23:30', GeomFromText('POINT(45.060677 7.635199)'), 'bartorino@test.com', '1');
-insert into MERCHANTS values(4, 'merchant4', 'pass4', 'Ristorante Verona', '0864353058C', '3332145678234', 'Stradone Porta Palio 70', 'Verona', 'Italy', 'www.ristoranteverona.it', '2', '11:00', '23:30', GeomFromText('POINT(45.436728 10.982822)'), 'ristoranteverona@test.com', '2');
-insert into MERCHANTS values(5, 'merchant5', 'pass5', 'Ristorante Genova', '0874353058C', '3282145678246', 'Via Antonio Burlando 5', 'Genova', 'Italy', 'www.ristorantegenova.it', '3', '11:00', '23:30', GeomFromText('POINT(44.418172 8.945073)'), 'ristorantegenova@test.com', '2');
-insert into MERCHANTS values(6, 'merchant6', 'pass6', 'Ristorante Napoli', '0874343058C', '3282143478246', 'Via Nuova Brecce 214', 'Napoli', 'Italy', 'www.ristorantenapoli.it', '3', '11:00', '23:30', GeomFromText('POINT(40.853485 14.304132)'), 'ristorantenapoli@test.com', '2');
-insert into MERCHANTS values(7, 'merchant7', 'pass7', 'Pizzeria Palermo', '0874342358C', '3283453478246', 'Corso Tukory 211', 'Palermo', 'Italy', 'www.pizzeriapalermo.it', '4', '11:00', '23:45', GeomFromText('POINT(38.108296, 13.356598)'), 'pizzeriapalermo@test.com', '3');
-insert into MERCHANTS values(8, 'merchant8', 'pass8', 'Pizzeria Messina', '0984342358C', '3283453478212', 'Via Cesare Battisti 100', 'Messina', 'Italy', 'www.pizzeriamessina.it', '3', '11:00', '23:45', GeomFromText('POINT(38.187286 15.552748)'), 'pizzeriamessina@test.com', '3');
-insert into MERCHANTS values(9, 'merchant9', 'pass9', 'Mensa Cagliari', '0994342358C', '3283233479212', 'Via Alessandro Manzoni 	 6', 'Cagliari', 'Italy', 'www.mensacagliari.it', '0', '11:00', '15:00', GeomFromText('POINT(39.221614, 9.123947)'), 'mensacagliari@test.com', '6');
+insert into MERCHANTS values(1, 'merchant1', 'pass1', 'Bar Roma', '0764352056C', '33921456789876', 'Via Achille Benedetti 2', 'Roma', 'Italy', 'www.barroma.it', '1', '07:00', '23:00', GeomFromText('POINT(41.912458 12.544012)'), null,'barroma@test.com', '1');
+insert into MERCHANTS values(2, 'merchant2', 'pass2', 'Bar Milano', '0864352056C', '33921456789856', 'Via Vincenzo Foppa 10', 'Milano', 'Italy', 'www.barmilano.it', '2', '07:00', '23:30', GeomFromText('POINT(45.458437 9.162792)'), null,'barmilano@test.com', '1');
+insert into MERCHANTS values(3, 'merchant3', 'pass3', 'Bar Torino', '0864352058C', '3392145678234', 'Corso Trapani 195', 'Torino', 'Italy', 'www.bartorino.it', '2', '06:00', '23:30', GeomFromText('POINT(45.060677 7.635199)'), null,'bartorino@test.com', '1');
+insert into MERCHANTS values(4, 'merchant4', 'pass4', 'Ristorante Verona', '0864353058C', '3332145678234', 'Stradone Porta Palio 70', 'Verona', 'Italy', 'www.ristoranteverona.it', '2', '11:00', '23:30', GeomFromText('POINT(45.436728 10.982822)'), null, 'ristoranteverona@test.com', '2');
+insert into MERCHANTS values(5, 'merchant5', 'pass5', 'Ristorante Genova', '0874353058C', '3282145678246', 'Via Antonio Burlando 5', 'Genova', 'Italy', 'www.ristorantegenova.it', '3', '11:00', '23:30', GeomFromText('POINT(44.418172 8.945073)'), null,'ristorantegenova@test.com', '2');
+insert into MERCHANTS values(6, 'merchant6', 'pass6', 'Ristorante Napoli', '0874343058C', '3282143478246', 'Via Nuova Brecce 214', 'Napoli', 'Italy', 'www.ristorantenapoli.it', '3', '11:00', '23:30', GeomFromText('POINT(40.853485 14.304132)'), null,'ristorantenapoli@test.com', '2');
+insert into MERCHANTS values(7, 'merchant7', 'pass7', 'Pizzeria Palermo', '0874342358C', '3283453478246', 'Corso Tukory 211', 'Palermo', 'Italy', 'www.pizzeriapalermo.it', '4', '11:00', '23:45', GeomFromText('POINT(38.108296, 13.356598)'), null,'pizzeriapalermo@test.com', '3');
+insert into MERCHANTS values(8, 'merchant8', 'pass8', 'Pizzeria Messina', '0984342358C', '3283453478212', 'Via Cesare Battisti 100', 'Messina', 'Italy', 'www.pizzeriamessina.it', '3', '11:00', '23:45', GeomFromText('POINT(38.187286 15.552748)'), null,'pizzeriamessina@test.com', '3');
+insert into MERCHANTS values(9, 'merchant9', 'pass9', 'Mensa Cagliari', '0994342358C', '3283233479212', 'Via Alessandro Manzoni 	 6', 'Cagliari', 'Italy', 'www.mensacagliari.it', '0', '11:00', '15:00', GeomFromText('POINT(39.221614, 9.123947)'), null,'mensacagliari@test.com', '6');
 
 -- CARDS --
 insert into CARDS values(1, 1, 20, '2015-04-15');
@@ -481,7 +481,7 @@ insert into CODES values(38, 'prova38', 15, 5);
 insert into active_cards(stamps_number, rating, id_customer, id_card) values(0, 1, 1, 2);
 
 -- LOGS --
-insert into logs(location, stamps_num, id_active_card) values('Milano', 2, 2);
+insert into logs(location, stamps_num, id_active_card) values('Milano', 2, 1);
 
 
 COMMIT;
