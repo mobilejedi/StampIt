@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `STAMPIT`.`MERCHANTS` (
   `OPENING_TIME` TIME NULL,
   `CLOSING_TIME` TIME NULL,
   `GPS_COORDINATES` GEOMETRY NULL,
+  `GPS_COORDINATES_TEXT` varchar(45) DEFAULT NULL,
   `EMAIL` VARCHAR(45) NOT NULL,
   `MERCHANT_CATEGORY` BIGINT NOT NULL,
   PRIMARY KEY (`ID_MERCHANT`),
@@ -305,6 +306,36 @@ CREATE TABLE IF NOT EXISTS `STAMPIT`.`CATEGORIES_PARAMS` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- TRIGGERS
+-- -----------------------------------------------------
+USE `STAMPIT`;
+
+DELIMITER $$
+
+USE `STAMPIT`$$
+DROP TRIGGER IF EXISTS `STAMPIT`.`MERCHANTS_BINS` $$
+USE `STAMPIT`$$
+CREATE TRIGGER `MERCHANTS_BINS` BEFORE INSERT ON `MERCHANTS` 
+FOR EACH ROW BEGIN
+    SET NEW.gps_coordinates_text = astext(NEW.gps_coordinates);
+END;
+$$
+
+
+USE `STAMPIT`$$
+DROP TRIGGER IF EXISTS `STAMPIT`.`MERCHANTS_BUPD` $$
+USE `STAMPIT`$$
+CREATE TRIGGER `MERCHANTS_BUPD` BEFORE UPDATE ON `MERCHANTS` 
+FOR EACH ROW
+BEGIN
+    SET NEW.gps_coordinates_text = astext(NEW.gps_coordinates);
+END;$$
+
+
+DELIMITER ;
+
+
 -- CUSTOMERS --
 insert into CUSTOMERS values(1,'giuliorossi', 'pass1', 'Giulio', 'Rossi', 'giulio.rossi@test.com', '332444447723');
 insert into CUSTOMERS values(2,'guidomarro', ' pass2', 'Guido', 'Marro', 'guido.marro@test.com', '33248847723');
@@ -445,6 +476,13 @@ insert into CODES values(35, 'prova35', 14, 5);
 insert into CODES values(36, 'prova36', 15, 3);
 insert into CODES values(37, 'prova37', 15, 4);
 insert into CODES values(38, 'prova38', 15, 5);
+
+-- ACTIVE_CARDS --
+insert into active_cards(stamps_number, rating, id_customer, id_card) values(0, 1, 1, 2);
+
+-- LOGS --
+insert into logs(location, stamps_num, id_active_card) values('Milano', 2, 2);
+
 
 COMMIT;
 
