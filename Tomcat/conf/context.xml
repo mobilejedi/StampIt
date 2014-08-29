@@ -21,8 +21,12 @@
     <!-- Default set of monitored resources -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
 	
-	<ResourceLink name="jdbc/stampit"
-                global="jdbc/stampit"
+	<ResourceLink name="mysql/stampit"
+                global="mysql/stampit"
+                auth="Container"
+                type="javax.sql.DataSource" />
+	<ResourceLink name="postgres/stampit"
+                global="postgres/stampit"
                 auth="Container"
                 type="javax.sql.DataSource" />
 
