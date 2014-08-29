@@ -54,12 +54,13 @@ public class StampParameter implements java.io.Serializable {
 	}
 
 	
-//	@SequenceGenerator(name="STAMP_PARAMETERS_ID_STAMP_PARAMS_seq",
-//		sequenceName="STAMP_PARAMETERS_ID_STAMP_PARAMS_seq",
-//		allocationSize=1)
-//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-//		generator="STAMP_PARAMETERS_ID_STAMP_PARAMS_seq")
+
 	@Id
+//	@SequenceGenerator(name="STAMP_PARAMETERS_ID_STAMP_PARAMS_seq",
+//	sequenceName="STAMP_PARAMETERS_ID_STAMP_PARAMS_seq",
+//	allocationSize=1)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+//	generator="STAMP_PARAMETERS_ID_STAMP_PARAMS_seq")
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "ID_STAMP_PARAMS", unique = true, nullable = false)
 	public Long getIdStampParams() {

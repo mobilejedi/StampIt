@@ -27,13 +27,13 @@ public class AchievedBonus implements java.io.Serializable {
 	public AchievedBonus() {
 	}
 
-	
+
+	@Id
 //	@SequenceGenerator(name="ACHIEVED_BONUSES_ID_ACHIEVED_BONUSES_seq",
 //		sequenceName="ACHIEVED_BONUSES_ID_ACHIEVED_BONUSES_seq",
 //		allocationSize=1)
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE,
 //		generator="ACHIEVED_BONUSES_ID_ACHIEVED_BONUSES_seq")
-	@Id
 	@Column(name = "ID_ACHIEVED_BONUSES", unique = true, nullable = false)
 	public long getIdAchievedBonuses() {
 		return this.idAchievedBonuses;

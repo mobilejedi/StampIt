@@ -49,12 +49,12 @@ public class MerchantCategory implements java.io.Serializable {
 	}
 
 	
-//	@SequenceGenerator(name="MERCHANT_CATEGORIES_ID_CATEGORY_seq",
-//		sequenceName="MERCHANT_CATEGORIES_ID_CATEGORY_seq",
-//		allocationSize=1)
-//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-//		generator="MERCHANT_CATEGORIES_ID_CATEGORY_seq")
 	@Id
+//	@SequenceGenerator(name="MERCHANT_CATEGORIES_ID_CATEGORY_seq",
+//	sequenceName="MERCHANT_CATEGORIES_ID_CATEGORY_seq",
+//	allocationSize=1)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+//	generator="MERCHANT_CATEGORIES_ID_CATEGORY_seq")
 	@Column(name = "ID_CATEGORY", unique = true, nullable = false)
 	public long getIdCategory() {
 		return this.idCategory;

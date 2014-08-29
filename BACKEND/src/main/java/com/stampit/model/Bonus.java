@@ -33,13 +33,12 @@ public class Bonus implements java.io.Serializable {
 	public Bonus() {
 	}
 
-	
+	@Id
 //	@SequenceGenerator(name="BONUSES_ID_BONUS_seq",
 //		sequenceName="BONUSES_ID_BONUS_seq",
 //		allocationSize=1)
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-//		generator="BONUSES_ID_BONUS_seq")
-	@Id
+//		generator="BONUSES_ID_BONUS_seq")	
 	@Column(name = "ID_BONUS", unique = true, nullable = false)
 	public long getIdBonus() {
 		return this.idBonus;

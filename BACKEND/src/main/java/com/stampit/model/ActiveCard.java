@@ -40,14 +40,15 @@ public class ActiveCard implements java.io.Serializable {
 	public ActiveCard() {
 	}
 
+
 	
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
 //	@SequenceGenerator(name="ACTIVE_CARDS_ID_ACTIVE_CARD_seq",
 //    	sequenceName="ACTIVE_CARDS_ID_ACTIVE_CARD_seq",
 //    	allocationSize=1)
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-//		generator="ACTIVE_CARDS_ID_ACTIVE_CARD_seq")
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
+//		generator="ACTIVE_CARDS_ID_ACTIVE_CARD_seq")		
 	@Column(name = "ID_ACTIVE_CARD", unique = true, nullable = false)
 	public Long getIdActiveCard() {
 		return this.idActiveCard;

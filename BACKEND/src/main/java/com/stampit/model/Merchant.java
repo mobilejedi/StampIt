@@ -47,7 +47,8 @@ public class Merchant implements java.io.Serializable {
 	private String closingDay;
 	private Date openingTime;
 	private Date closingTime;
-	private Point gpsCoordinates;
+	private Byte[] gpsCoordinates;
+	private String gpsCooordinatesText;
 	private String email;
 	private Set<MerchantFeedback> merchantFeedbackses = new HashSet<MerchantFeedback>(0);
 	private Set<Card> cardses = new HashSet<Card>(0);
@@ -55,14 +56,14 @@ public class Merchant implements java.io.Serializable {
 	public Merchant() {
 	}
 
-	
-//	@SequenceGenerator(name="MERCHANTS_ID_MERCHANT_seq",
-//		sequenceName="MERCHANTS_ID_MERCHANT_seq",
-//		allocationSize=1)
-//	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-//		generator="MERCHANTS_ID_MERCHANT_seq")
+//	@GeneratedValue(strategy = IDENTITY)
+
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
+//	@SequenceGenerator(name="MERCHANTS_ID_MERCHANT_seq",
+//	sequenceName="MERCHANTS_ID_MERCHANT_seq",
+//	allocationSize=1)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+//	generator="MERCHANTS_ID_MERCHANT_seq")
 	@Column(name = "ID_MERCHANT", unique = true, nullable = false)
 	public Long getIdMerchant() {
 		return this.idMerchant;
@@ -192,14 +193,23 @@ public class Merchant implements java.io.Serializable {
 		this.closingTime = closingTime;
 	}
 
-	@Column(name = "GPS_COORDINATES", columnDefinition="Geometry")
-	@Type(type="org.hibernate.spatial.GeometryType")
-	public Point getGpsCoordinates() {
+	@Column(name = "GPS_COORDINATES")
+	//@Type(type="org.hibernate.spatial.GeometryType")
+	public Byte[] getGpsCoordinates() {
 		return this.gpsCoordinates;
 	}
 
-	public void setGpsCoordinates(Point gpsCoordinates) {
+	public void setGpsCoordinates(Byte[] gpsCoordinates) {
 		this.gpsCoordinates = gpsCoordinates;
+	}
+	
+	@Column(name = "GPS_COORDINATES_TEXT")
+	public String getGpsCooordinatesText() {
+		return gpsCooordinatesText;
+	}
+
+	public void setGpsCooordinatesText(String gpsCooordinatesText) {
+		this.gpsCooordinatesText = gpsCooordinatesText;
 	}
 
 	@Column(name = "EMAIL", nullable = false, length = 45)
