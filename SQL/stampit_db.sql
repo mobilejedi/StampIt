@@ -128,7 +128,7 @@ DROP TABLE IF EXISTS `STAMPIT`.`LOGS` ;
 CREATE TABLE IF NOT EXISTS `STAMPIT`.`LOGS` (
   `ID_LOG` BIGINT NOT NULL AUTO_INCREMENT,
   `INS_DATE` DATETIME NOT NULL DEFAULT current_timestamp,
-  `LOCATION` VARCHAR(100) NULL,
+  `LOCATION` GEOMETRY NULL,
   `STAMPS_NUM` INT NULL,
   `ID_ACTIVE_CARD` BIGINT NULL,
   PRIMARY KEY (`ID_LOG`),
@@ -482,7 +482,7 @@ insert into CODES values(38, 'prova38', 15, 5);
 insert into active_cards(stamps_number, rating, id_customer, id_card) values(0, 1, 1, 2);
 
 -- LOGS --
-insert into logs(location, stamps_num, id_active_card) values('Milano', 2, 1);
+insert into logs(location, stamps_num, id_active_card) values(GeomFromText('POINT(41.912458 12.544012)'), 2, 1);
 
 
 COMMIT;
