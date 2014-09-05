@@ -14,11 +14,7 @@
 	    <id>com.springsource.repository.bundles.external</id>
 	    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
 	    <url>http://repository.springsource.com/maven/bundles/external</url>
-	</repository>
-	<repository>
-	     <id>Hibernate Spatial repo</id>
-	     <url>http://www.hibernatespatial.org/repository</url>
-	</repository>
+	</repository>	
   </repositories>   
     <properties>
     
@@ -160,16 +156,7 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
-		</dependency>
-		
-			
-		
-		<!-- Hibernate Spatial -->
-		<dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-spatial</artifactId>
-                <version>4.3</version>
-        </dependency>
+		</dependency>		
 
 	</dependencies>	
 	<build>

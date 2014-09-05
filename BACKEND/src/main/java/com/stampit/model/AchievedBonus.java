@@ -23,6 +23,7 @@ public class AchievedBonus implements java.io.Serializable {
 	private long idAchievedBonuses;
 	private ActiveCard activeCard;
 	private Bonus bonus;
+	private boolean used;
 
 	public AchievedBonus() {
 	}
@@ -63,4 +64,13 @@ public class AchievedBonus implements java.io.Serializable {
 		this.bonus = bonus;
 	}
 
+	@Column(name = "USED")
+	public boolean isUsed() {
+		return used;
+	}
+
+	public void setUsed(boolean used) {
+		this.used = used;
+	}		
+	
 }

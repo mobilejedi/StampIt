@@ -53,7 +53,7 @@ public class Code implements java.io.Serializable {
 		this.idCode = idCode;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_CARD", nullable = false)
 	public Card getCard() {
 		return this.card;
@@ -63,7 +63,7 @@ public class Code implements java.io.Serializable {
 		this.card = card;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_STAMP_PARAMS", nullable = false)
 	public StampParameter getStampParameters() {
 		return this.stampParameters;

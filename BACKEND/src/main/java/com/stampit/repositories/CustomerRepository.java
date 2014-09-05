@@ -10,7 +10,7 @@ import com.stampit.model.Customer;
 
 @RepositoryRestResource(collectionResourceRel ="customer", path="customers")
 public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long> {
-	List<Customer> findByLastName(@Param("lastName") String lastName);
+	Customer findByUsername(@Param("username") String username);
 }
 
 

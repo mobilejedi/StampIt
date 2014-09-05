@@ -27,7 +27,7 @@ public class Log implements java.io.Serializable {
 	private long idLog;	
 	private ActiveCard activeCard;
 	private Date insDate;
-	private String location;
+	private Byte[] location;
 	private Integer stampsNum;
 
 	public Log() {
@@ -69,11 +69,11 @@ public class Log implements java.io.Serializable {
 	}
 
 	@Column(name = "LOCATION", length = 100)
-	public String getLocation() {
+	public Byte[] getLocation() {
 		return this.location;
 	}
 
-	public void setLocation(String location) {
+	public void setLocation(Byte[] location) {
 		this.location = location;
 	}
 
