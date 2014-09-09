@@ -46,7 +46,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `STAMPIT`.`MERCHANTS` ;
 
 CREATE TABLE IF NOT EXISTS `STAMPIT`.`MERCHANTS` (
-  `ID_MERCHANT` BIGINT NOT NULL AUTO_INCREMENT,
+  `ID_MERCHANT` BIGINT NOT NULL AUTO_INCREMENT,  
   `USERNAME` VARCHAR(16) NOT NULL UNIQUE,
   `PASSWORD` VARCHAR(12) NOT NULL,
   `NAME` VARCHAR(200) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `STAMPIT`.`LOGS` (
   `ID_LOG` BIGINT NOT NULL AUTO_INCREMENT,
   `INS_DATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `LOCATION` GEOMETRY NULL,
-  `STAMPS_NUM` INT NULL,
+  `STAMPS_NUM` INT NULL,  
   `ID_ACTIVE_CARD` BIGINT NULL,
   PRIMARY KEY (`ID_LOG`),
   INDEX `ID_ACTIVE_CARD_idx` (`ID_ACTIVE_CARD` ASC),
@@ -510,10 +510,10 @@ insert into CODES values(37, 'prova37', 15, 4);
 insert into CODES values(38, 'prova38', 15, 5);
 
 -- ACTIVE_CARDS --
-insert into active_cards(stamps_number, rating, id_customer, id_card) values(0, 1, 1, 2);
+insert into ACTIVE_CARDS(stamps_number, rating, id_customer, id_card) values(0, 1, 1, 2);
 
 -- LOGS --
-insert into logs(location, stamps_num, id_active_card) values(GeomFromText('POINT(41.912458 12.544012)'), 2, 1);
+insert into LOGS(location, stamps_num, id_active_card) values(GeomFromText('POINT(41.912458 12.544012)'), 2, 1);
 
 
 COMMIT;
